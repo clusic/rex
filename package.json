@@ -1,6 +1,6 @@
 {
   "name": "@clusic/rex",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The runtime service of clusic which named rex",
   "scripts": {
     "test": "node test/index.js"
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/clusic/rex#readme",
   "dependencies": {
     "@clusic/method": "^1.0.3",
-    "@clusic/rex-loader": "^1.0.1",
+    "@clusic/rex-loader": "^1.0.2",
     "@clusic/utils": "^1.0.0",
     "@evio/intersect": "^1.0.4",
     "babel": "^6.23.0",
@@ -31,10 +31,10 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
     "is-type-of": "^1.2.1",
-    "koa": "^2.5.3",
+    "koa": "^2.6.1",
     "koa-router": "^7.4.0"
   },
   "devDependencies": {
-    "@clusic/cluster": "^1.0.2"
+    "@clusic/cluster": "^1.0.4"
   }
 }
