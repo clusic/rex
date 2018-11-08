@@ -1,6 +1,6 @@
 {
   "name": "@clusic/rex",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "The runtime service of clusic which named rex",
   "scripts": {
     "test": "node test/index.js"
