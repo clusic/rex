@@ -68,6 +68,14 @@ module.exports = class AgentService extends EventEmitter {
         await plugins[i].exports(this, this.Plugin.maps[plugins[i].name]);
       }
     }
+    const appConfigFile = path.resolve(this.cwd, `config/config.${this.env}.js`);
+    if (fs.existsSync(appConfigFile)) {
+      const appConfigExports = utils.loadFile(appConfigFile);
+      this.config = appConfigExports;
+      if (typeof appConfigExports === 'function') {
+        this.config = await appConfigExports(this);
+      }
+    }
     const appFile = path.resolve(this.cwd, this.name + '.bootstrap.js');
     if (fs.existsSync(appFile)) {
       const appExports = utils.loadFile(appFile);
@@ -89,7 +97,7 @@ module.exports = class AgentService extends EventEmitter {
       const from = msg.from;
       if (!this[FeedCycles][event]) return this.send(from, '#ipc_feed#', { status: 404, id });
       const result = this[FeedCycles][event](data);
-      if (!result) return this.send(from, '#ipc_feed#', { status: 200, id });
+      if (result === undefined) return this.send(from, '#ipc_feed#', { status: 200, id });
       if (result.then) {
         result.then(data =>  {
           if (data instanceof Error) {
