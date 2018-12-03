@@ -1,6 +1,6 @@
 {
   "name": "@clusic/rex",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "The runtime service of clusic which named rex",
   "scripts": {
     "test": "node test/index.js"
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/clusic/rex#readme",
   "dependencies": {
-    "@clusic/method": "^1.0.10",
+    "@clusic/method": "^1.0.11",
     "@clusic/rex-loader": "^1.0.3",
     "@clusic/utils": "^1.0.0",
     "@evio/intersect": "^1.0.4",
